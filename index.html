@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌳 Groot Marvel</title>
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&family=Antonio:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      h1 {
+        text-align: center;
+        color: #224b0c;
+        background: radial-gradient(
+          circle at 10% 20%,
+          rgb(220, 217, 249) 0%,
+          rgb(172, 224, 217) 89.8%
+        );
+        border-radius: 4px;
+        border: solid 1px #d2d79f;
+      }
+      h2 {
+        color: #d2d79f;
+        text-align: center;
+        border: 1px solid #d2d79f;
+
+        padding: 15px;
+        font-size: 18px;
+        border-radius: 4px;
+      }
+      img {
+        display: block;
+        margin: 20px auto;
+        max-width: 100%;
+        border-radius: 4px;
+      }
+      p {
+        margin: 20px 0 10px;
+        line-height: 1.5;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      hr {
+        border-style: inherit;
+
+        border: 1px solid #d2d79f;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 10px 60px;
+        background: linear-gradient(
+          180.5deg,
+          rgb(0, 128, 128) 8.5%,
+          rgb(174, 206, 100) 118.2%
+        );
+        border-radius: 15px;
+        border: 1px solid black;
+        box-shadow: 24px 19px 49px -29px rgba(5, 5, 5, 0.53);
+      }
+      .brand-title {
+        font-family: "Acme", sans-serif;
+        font-size: 60px;
+
+        font-weight: bolder;
+        padding: 0;
+        background: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+        border-radius: 20px;
+      }
+      .subtitle {
+        color: #fff;
+        background-color: #ed3833;
+        text-transform: uppercase;
+        font-family: "Antonio", sans-serif;
+        font-size: 30px;
+      }
+      .read-more {
+        padding-top: 10px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #d2d79f;
+      }
+      .read-more:hover {
+        text-decoration: underline;
+        color: #ed3833;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        background-color: #ed3833;
+        color: #fff;
+        text-shadow: rgb(228, 245, 116) 1px 0 10px;
+        font-size: 18px;
+        padding: 20px 100px;
+        border: none;
+        border-radius: 40px;
+        box-shadow: 5px 5px 10px rgba(0, 0n, 0, 0.3);
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        opacity: 0.9;
+        cursor: pointer;
+
+        text-shadow: rgb(228, 245, 116) 12px 0 30px;
+      }
+      .footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>I am <span class="brand-title">Groot</span>!</h1>
+      <h2>It is <span class="subtitle">Marvel</span>, baby. Discover it!</h2>
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/635/original/main_img.jpeg?1662447759"
+        alt="groot-picture"
+      />
+      <hr />
+      <p>
+        <strong>Groot</strong> is a fictional character appearing in American
+        comic books published by Marvel Comics. Created by Stan Lee, Larry
+        Lieber and Jack Kirby, the character first appeared in Tales to Astonish
+        #13 (Nov. 1960). An extraterrestrial, sentient tree-like creature, the
+        original Groot first appeared as an invader that intended to capture
+        humans for experimentation. The character can only say the repeated line
+        "I am Groot", but has different meaning.
+        <br />
+      </p>
+      <a
+        href="https://en.wikipedia.org/wiki/Groot"
+        target="_blank"
+        class="read-more"
+        >Read more on Wikipedia</a
+      >
+      <hr />
+      <button class="buy-button">👉 Buy mini Groot</button>
+
+      <p class="footer">This page was build by <em>Albina Shevchuk</em></p>
+    </div>
+
+    <script>
+      function updateHeading(newHeading) {
+        let heading = document.querySelector("h1");
+        heading.innerHTML = newHeading;
+      }
+
+      function proposal() {
+        let order = prompt("How many mini Groots do you want to order?");
+        return order >= 2;
+      }
+
+      function apply() {
+        let firstName = prompt("What is your first name?");
+        let email = prompt("Where to send the carrier pigeon?");
+
+        if (proposal()) {
+          updateHeading(
+            `Hi ${firstName}! It is great. You have received a discount. Check your email`
+          );
+        } else {
+          updateHeading(
+            ` Darling ${firstName}, your order has been placed. Check your mail.`
+          );
+        }
+      }
+
+      let applyButton = document.querySelector("button");
+      applyButton.addEventListener("click", apply);
+    </script>
+  </body>
+</html>
